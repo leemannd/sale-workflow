@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-from openerp import models
+from odoo import models
 
 
 class ProductSetAd(models.TransientModel):

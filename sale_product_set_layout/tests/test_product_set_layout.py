@@ -32,9 +32,9 @@ class test_product_set_layout(common.TransactionCase):
             for set_line in product_set_with_section.set_line_ids:
                 if line.product_id.id == set_line.product_id.id:
                     self.assertEquals(
-                        line.sale_layout_cat_id.id,
+                        line.layout_category_id.id,
                         self.env.ref(
-                            'sale_layout_category.sale_layout_cat_1').id)
+                            'sale.sale_layout_cat_1').id)
             for set_line in product_set_without_section.set_line_ids:
                 if line.product_id.id == set_line.product_id.id:
-                    self.assertIsNone(line.sale_layout_cat_id)
+                    self.assertFalse(line.layout_category_id.id)
